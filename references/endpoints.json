@@ -1,0 +1,583 @@
+[
+  {
+    "doc_id": "187131779",
+    "doc_url": "https://docs.csqaq.com/api-187131779",
+    "doc_md_url": "https://docs.csqaq.com/api-187131779.md",
+    "path": "/api/v1/current_data",
+    "method": "GET",
+    "operationId": "______________api_v1_current_data_get",
+    "summary": "获取首页相关数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品指数",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "283470032",
+    "doc_url": "https://docs.csqaq.com/api-283470032",
+    "doc_md_url": "https://docs.csqaq.com/api-283470032.md",
+    "path": "/api/v1/goods/getPriceByMarketHashName",
+    "method": "POST",
+    "operationId": "__good_____api_v1_info_good_get",
+    "summary": "批量获取饰品出售价格数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "337690892",
+    "doc_url": "https://docs.csqaq.com/api-337690892",
+    "doc_md_url": "https://docs.csqaq.com/api-337690892.md",
+    "path": "/api/v1/goods/get_all_goods_id",
+    "method": "POST",
+    "operationId": "__good_____api_v1_info_good_get",
+    "summary": "获取全量站内饰品ID",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情/企业合作用户接口",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "327138094",
+    "doc_url": "https://docs.csqaq.com/api-327138094",
+    "doc_md_url": "https://docs.csqaq.com/api-327138094.md",
+    "path": "/api/v1/goods/get_all_goods_info",
+    "method": "POST",
+    "operationId": "__good_____api_v1_info_good_get",
+    "summary": "获取全量饰品价格数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情/企业合作用户接口",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "337683199",
+    "doc_url": "https://docs.csqaq.com/api-337683199",
+    "doc_md_url": "https://docs.csqaq.com/api-337683199.md",
+    "path": "/api/v1/goods/get_all_goods_rank",
+    "method": "POST",
+    "operationId": "__good_____api_v1_info_good_get",
+    "summary": "获取全量饰品排行榜数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情/企业合作用户接口",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "366480732",
+    "doc_url": "https://docs.csqaq.com/api-366480732",
+    "doc_md_url": "https://docs.csqaq.com/api-366480732.md",
+    "path": "/api/v1/goods/get_goods_template",
+    "method": "POST",
+    "operationId": "__good_____api_v1_info_good_get",
+    "summary": "获取饰品模板数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情/企业合作用户接口",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131781",
+    "doc_url": "https://docs.csqaq.com/api-187131781",
+    "doc_md_url": "https://docs.csqaq.com/api-187131781.md",
+    "path": "/api/v1/info/chart",
+    "method": "POST",
+    "operationId": "__good_____api_v1_info_chart_post",
+    "summary": "获取单件饰品图表数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131782",
+    "doc_url": "https://docs.csqaq.com/api-187131782",
+    "doc_md_url": "https://docs.csqaq.com/api-187131782.md",
+    "path": "/api/v1/info/chartAll",
+    "method": "POST",
+    "operationId": "____good_____api_v1_info_chartAll_post",
+    "summary": "获取单件饰品全量图表数据 (暂停使用)",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131826",
+    "doc_url": "https://docs.csqaq.com/api-187131826",
+    "doc_md_url": "https://docs.csqaq.com/api-187131826.md",
+    "path": "/api/v1/info/container_data_info",
+    "method": "POST",
+    "operationId": "________api_v1_info_container_data_info_post",
+    "summary": "获取所有收藏品列表",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 武器箱数据",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131823",
+    "doc_url": "https://docs.csqaq.com/api-187131823",
+    "doc_md_url": "https://docs.csqaq.com/api-187131823.md",
+    "path": "/api/v1/info/exchange_detail",
+    "method": "POST",
+    "operationId": "___________api_v1_info_exchange_detail_post",
+    "summary": "获取挂刀行情详情信息",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 挂刀行情数据",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131828",
+    "doc_url": "https://docs.csqaq.com/api-187131828",
+    "doc_md_url": "https://docs.csqaq.com/api-187131828.md",
+    "path": "/api/v1/info/get_banana_chart",
+    "method": "POST",
+    "operationId": "____Banana_chart___api_v1_info_get_banana_chart_post",
+    "summary": "获取单件Banana图表数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/Banana(挂香蕉)数据(暂停更新)",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131827",
+    "doc_url": "https://docs.csqaq.com/api-187131827",
+    "doc_md_url": "https://docs.csqaq.com/api-187131827.md",
+    "path": "/api/v1/info/get_banana_data",
+    "method": "POST",
+    "operationId": "____Banana_good___api_v1_info_get_banana_data_post",
+    "summary": "获取所有Banana列表数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/Banana(挂香蕉)数据(暂停更新)",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131777",
+    "doc_url": "https://docs.csqaq.com/api-187131777",
+    "doc_md_url": "https://docs.csqaq.com/api-187131777.md",
+    "path": "/api/v1/info/get_good_id",
+    "method": "POST",
+    "operationId": "__good_id___api_v1_info_get_good_id_post",
+    "summary": "获取饰品的ID信息",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131775",
+    "doc_url": "https://docs.csqaq.com/api-187131775",
+    "doc_md_url": "https://docs.csqaq.com/api-187131775.md",
+    "path": "/api/v1/info/get_page_list",
+    "method": "POST",
+    "operationId": "________api_v1_info_get_page_list_post",
+    "summary": "获取饰品列表信息",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 涨跌/热门排行",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "327157635",
+    "doc_url": "https://docs.csqaq.com/api-327157635",
+    "doc_md_url": "https://docs.csqaq.com/api-327157635.md",
+    "path": "/api/v1/info/get_popular_goods",
+    "method": "POST",
+    "operationId": "_______api_v1_info_get_series_list_post",
+    "summary": "获取全量饰品热度排名",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情/企业合作用户接口",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131776",
+    "doc_url": "https://docs.csqaq.com/api-187131776",
+    "doc_md_url": "https://docs.csqaq.com/api-187131776.md",
+    "path": "/api/v1/info/get_rank_list",
+    "method": "POST",
+    "operationId": "__rank_____api_v1_info_get_rank_list_post",
+    "summary": "获取排行榜单信息接口",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 涨跌/热门排行/获取排行榜信息",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131804",
+    "doc_url": "https://docs.csqaq.com/api-187131804",
+    "doc_md_url": "https://docs.csqaq.com/api-187131804.md",
+    "path": "/api/v1/info/get_series_detail",
+    "method": "GET",
+    "operationId": "_______api_v1_info_get_series_detail_get",
+    "summary": "获取单件热门系列饰品详情",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 涨跌/热门排行",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131803",
+    "doc_url": "https://docs.csqaq.com/api-187131803",
+    "doc_md_url": "https://docs.csqaq.com/api-187131803.md",
+    "path": "/api/v1/info/get_series_list",
+    "method": "POST",
+    "operationId": "_______api_v1_info_get_series_list_post",
+    "summary": "获取热门系列饰品列表",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 涨跌/热门排行",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131780",
+    "doc_url": "https://docs.csqaq.com/api-187131780",
+    "doc_md_url": "https://docs.csqaq.com/api-187131780.md",
+    "path": "/api/v1/info/good",
+    "method": "GET",
+    "operationId": "__good_____api_v1_info_good_get",
+    "summary": "获取单件饰品详情",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131825",
+    "doc_url": "https://docs.csqaq.com/api-187131825",
+    "doc_md_url": "https://docs.csqaq.com/api-187131825.md",
+    "path": "/api/v1/info/good/container_detail",
+    "method": "GET",
+    "operationId": "___________api_v1_info_good_container_detail_get",
+    "summary": "获取单个收藏品的包含物",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 武器箱数据",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "366480669",
+    "doc_url": "https://docs.csqaq.com/api-366480669",
+    "doc_md_url": "https://docs.csqaq.com/api-366480669.md",
+    "path": "/api/v1/info/good/statistic",
+    "method": "GET",
+    "operationId": "__good_____api_v1_info_good_get",
+    "summary": "获取单件饰品存世量走势",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "294405260",
+    "doc_url": "https://docs.csqaq.com/api-294405260",
+    "doc_md_url": "https://docs.csqaq.com/api-294405260.md",
+    "path": "/api/v1/info/roi",
+    "method": "POST",
+    "operationId": "__________api_v1_stat_case_get",
+    "summary": "获取武器箱开箱回报率列表",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 武器箱数据",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "327163706",
+    "doc_url": "https://docs.csqaq.com/api-327163706",
+    "doc_md_url": "https://docs.csqaq.com/api-327163706.md",
+    "path": "/api/v1/info/roi_detail",
+    "method": "GET",
+    "operationId": "__________api_v1_stat_case_get",
+    "summary": "获取单个武器箱开箱回报率走势",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 武器箱数据",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "278065737",
+    "doc_url": "https://docs.csqaq.com/api-278065737",
+    "doc_md_url": "https://docs.csqaq.com/api-278065737.md",
+    "path": "/api/v1/info/simple/chartAll",
+    "method": "POST",
+    "operationId": "__good_____api_v1_info_chart_post",
+    "summary": "获取单件饰品k线数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情/企业合作用户接口",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131822",
+    "doc_url": "https://docs.csqaq.com/api-187131822",
+    "doc_md_url": "https://docs.csqaq.com/api-187131822.md",
+    "path": "/api/v1/info/vol_data_detail",
+    "method": "POST",
+    "operationId": "__________api_v1_info_vol_data_detail_post",
+    "summary": "获取成交量图表/磨损信息",
+    "deprecated": false,
+    "tags": [
+      "接口详情/实时成交数据（暂停更新）",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131821",
+    "doc_url": "https://docs.csqaq.com/api-187131821",
+    "doc_md_url": "https://docs.csqaq.com/api-187131821.md",
+    "path": "/api/v1/info/vol_data_info",
+    "method": "POST",
+    "operationId": "__________api_v1_info_vol_data_info_post",
+    "summary": "获取成交量数据信息",
+    "deprecated": false,
+    "tags": [
+      "接口详情/实时成交数据（暂停更新）",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131810",
+    "doc_url": "https://docs.csqaq.com/api-187131810",
+    "doc_md_url": "https://docs.csqaq.com/api-187131810.md",
+    "path": "/api/v1/monitor/get_task_list",
+    "method": "POST",
+    "operationId": "__________________api_v1_monitor_get_task_list_post",
+    "summary": "获取库存监控任务列表",
+    "deprecated": false,
+    "tags": [
+      "接口详情/库存监控",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131809",
+    "doc_url": "https://docs.csqaq.com/api-187131809",
+    "doc_md_url": "https://docs.csqaq.com/api-187131809.md",
+    "path": "/api/v1/monitor/get_task_trends",
+    "method": "POST",
+    "operationId": "____________api_v1_monitor_get_task_trends_post",
+    "summary": "获取库存监控最新动态",
+    "deprecated": false,
+    "tags": [
+      "接口详情/库存监控",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131813",
+    "doc_url": "https://docs.csqaq.com/api-187131813",
+    "doc_md_url": "https://docs.csqaq.com/api-187131813.md",
+    "path": "/api/v1/monitor/rank",
+    "method": "POST",
+    "operationId": "_____________api_v1_monitor_rank_post",
+    "summary": "获取库存监控持有量排行榜",
+    "deprecated": false,
+    "tags": [
+      "接口详情/库存监控",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "189290586",
+    "doc_url": "https://docs.csqaq.com/api-189290586",
+    "doc_md_url": "https://docs.csqaq.com/api-189290586.md",
+    "path": "/api/v1/search/suggest",
+    "method": "GET",
+    "operationId": "",
+    "summary": "联想查询饰品的ID信息",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品详情"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131788",
+    "doc_url": "https://docs.csqaq.com/api-187131788",
+    "doc_md_url": "https://docs.csqaq.com/api-187131788.md",
+    "path": "/api/v1/stat/case",
+    "method": "GET",
+    "operationId": "__________api_v1_stat_case_get",
+    "summary": "获取武器箱开箱数量统计",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 武器箱数据",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131799",
+    "doc_url": "https://docs.csqaq.com/api-187131799",
+    "doc_md_url": "https://docs.csqaq.com/api-187131799.md",
+    "path": "/api/v1/stat/case/chart",
+    "method": "POST",
+    "operationId": "__case_______api_v1_stat_case_chart_post",
+    "summary": "获取单个武器箱历史开箱量",
+    "deprecated": false,
+    "tags": [
+      "接口详情/ 武器箱数据",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "278085071",
+    "doc_url": "https://docs.csqaq.com/api-278085071",
+    "doc_md_url": "https://docs.csqaq.com/api-278085071.md",
+    "path": "/api/v1/sub/kline",
+    "method": "GET",
+    "operationId": "",
+    "summary": "获取指数K线图",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品指数"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "230764015",
+    "doc_url": "https://docs.csqaq.com/api-230764015",
+    "doc_md_url": "https://docs.csqaq.com/api-230764015.md",
+    "path": "/api/v1/sub_data",
+    "method": "GET",
+    "operationId": "",
+    "summary": "获取指数详情数据",
+    "deprecated": false,
+    "tags": [
+      "接口详情/饰品指数"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "342090738",
+    "doc_url": "https://docs.csqaq.com/api-342090738",
+    "doc_md_url": "https://docs.csqaq.com/api-342090738.md",
+    "path": "/api/v1/sys/bind_local_ip",
+    "method": "POST",
+    "operationId": "",
+    "summary": "绑定本机白名单IP",
+    "deprecated": false,
+    "tags": [
+      "接口详情/绑定本机白名单IP"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131815",
+    "doc_url": "https://docs.csqaq.com/api-187131815",
+    "doc_md_url": "https://docs.csqaq.com/api-187131815.md",
+    "path": "/api/v1/task/get_task_all",
+    "method": "POST",
+    "operationId": "______________api_v1_task_get_task_all_post",
+    "summary": "获取监控单个用户全部库存",
+    "deprecated": false,
+    "tags": [
+      "接口详情/库存监控",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "358158458",
+    "doc_url": "https://docs.csqaq.com/api-358158458",
+    "doc_md_url": "https://docs.csqaq.com/api-358158458.md",
+    "path": "/api/v1/task/get_task_business",
+    "method": "POST",
+    "operationId": "________________api_v1_task_get_task_info_post",
+    "summary": "获取监控单个用户库存动态",
+    "deprecated": false,
+    "tags": [
+      "接口详情/库存监控",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "187131814",
+    "doc_url": "https://docs.csqaq.com/api-187131814",
+    "doc_md_url": "https://docs.csqaq.com/api-187131814.md",
+    "path": "/api/v1/task/get_task_info",
+    "method": "POST",
+    "operationId": "________________api_v1_task_get_task_info_post",
+    "summary": "获取监控单个用户信息",
+    "deprecated": false,
+    "tags": [
+      "接口详情/库存监控",
+      "api"
+    ],
+    "requires_api_token": true
+  },
+  {
+    "doc_id": "343919624",
+    "doc_url": "https://docs.csqaq.com/api-343919624",
+    "doc_md_url": "https://docs.csqaq.com/api-343919624.md",
+    "path": "/api/v1/task/get_task_recent",
+    "method": "POST",
+    "operationId": "______________api_v1_task_get_task_all_post",
+    "summary": "获取监控单个用户库存快照列表",
+    "deprecated": false,
+    "tags": [
+      "接口详情/库存监控",
+      "api"
+    ],
+    "requires_api_token": true
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-04-06T14:09:22.936382+00:00",
+  "source": {
+    "sitemap_url": "https://docs.csqaq.com/sitemap.xml",
+    "docs_host": "https://docs.csqaq.com"
+  },
+  "counts": {
+    "api_docs_discovered": 39,
+    "api_docs_synced": 39,
+    "api_docs_failed": 0,
+    "endpoints_extracted": 39,
+    "collision_count": 0
+  },
+  "failures": [],
+  "collisions": []
+}
