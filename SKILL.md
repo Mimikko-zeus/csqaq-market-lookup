@@ -12,22 +12,28 @@ Do not maintain a static endpoint list by hand. Always sync from docs before bro
 
 ## Quick Start
 
-1. Set token in current shell:
+1. Get an API token from CSQAQ:
+   - Open `https://csqaq.com/`
+   - Sign in to your account
+   - Find the API token management page in the account area
+   - Copy your `ApiToken`
+
+2. Set token in current shell:
 ```bash
 $env:CSQAQ_API_TOKEN="<your_token>"
 ```
 
-2. Sync docs into local references:
+3. Sync docs into local references:
 ```bash
 python scripts/csqaq_api.py sync
 ```
 
-3. List available endpoints:
+4. List available endpoints:
 ```bash
 python scripts/csqaq_api.py list --limit 200
 ```
 
-4. Call any endpoint by operation id:
+5. Call any endpoint by operation id:
 ```bash
 python scripts/csqaq_api.py call --operation-id ______________api_v1_current_data_get --query type=init
 ```
@@ -37,7 +43,7 @@ If an `operationId` is not unique, add `--doc-id`:
 python scripts/csqaq_api.py call --operation-id __good_____api_v1_info_good_get --doc-id 327138094
 ```
 
-5. Call any endpoint by path + method:
+6. Call any endpoint by path + method:
 ```bash
 python scripts/csqaq_api.py call --path /api/v1/current_data --method GET --query type=init
 ```
@@ -55,12 +61,21 @@ git clone <your-repo-url> ~/.openclaw/skills/csqaq-market-lookup
 pip install pyyaml
 ```
 
-3. Set API token in shell:
+3. Get token from `https://csqaq.com/`, then set API token in shell:
 ```bash
 export CSQAQ_API_TOKEN="<your_token>"
 ```
 
-4. In OpenClaw prompt, invoke this skill and run calls with the bundled scripts.
+4. Run initial sync and smoke test:
+```bash
+python ~/.openclaw/skills/csqaq-market-lookup/scripts/csqaq_api.py sync
+python ~/.openclaw/skills/csqaq-market-lookup/scripts/csqaq_api.py call --path /api/v1/current_data --method GET --query type=init --pretty
+```
+
+5. In OpenClaw prompt, invoke this skill:
+```text
+Use $csqaq-market-lookup to sync CSQAQ docs, list endpoints, and call the endpoint I ask for.
+```
 
 ## Workflow
 
@@ -85,3 +100,4 @@ export CSQAQ_API_TOKEN="<your_token>"
 - You can override token per call with `--api-token`.
 - By default, requests target `https://api.csqaq.com`.
 - Keep token out of committed files.
+- Never hardcode real tokens in `SKILL.md`, scripts, or json files.

@@ -50,10 +50,25 @@ def resolve_endpoint(
     doc_id: str | None,
     path: str | None,
     method: str | None,
-) -> tuple[str, str]:
+) -> tuple[str, str, dict[str, Any] | None]:
     if path and method:
         normalized_path = path if path.startswith("/") else f"/{path}"
-        return normalized_path, method.upper()
+        normalized_method = method.upper()
+        if endpoints:
+            matches = [
+                ep
+                for ep in endpoints
+                if str(ep.get("path", "")) == normalized_path
+                and str(ep.get("method", "")).upper() == normalized_method
+            ]
+            if len(matches) == 1:
+                return normalized_path, normalized_method, matches[0]
+            if len(matches) > 1:
+                raise ValueError(
+                    f"Endpoint is ambiguous for {normalized_method} {normalized_path}. "
+                    "Use --operation-id or --doc-id to disambiguate."
+                )
+        return normalized_path, normalized_method, None
 
     candidates = endpoints
 
@@ -93,7 +108,7 @@ def resolve_endpoint(
     resolved_method = str(match.get("method", "GET")).upper()
     if not resolved_path.startswith("/"):
         resolved_path = f"/{resolved_path}"
-    return resolved_path, resolved_method
+    return resolved_path, resolved_method, match
 
 
 def build_url(base_url: str, path: str, query_pairs: list[tuple[str, str]]) -> str:
@@ -187,16 +202,24 @@ def cmd_call(args: argparse.Namespace) -> int:
     endpoints_file = Path(args.endpoints_file).resolve()
     endpoints: list[dict[str, Any]] = []
 
-    needs_catalog = bool(args.operation_id or args.doc_id or (args.path and not args.method))
+    needs_catalog = bool(args.operation_id or args.doc_id or args.path)
     if needs_catalog:
         if not endpoints_file.exists():
-            print(f"[ERROR] Endpoints file not found: {endpoints_file}")
-            print("Run sync first: python scripts/csqaq_api.py sync")
-            return 1
+            # Path+method can still be called without local catalog, but token auto-detection is disabled.
+            if args.path and args.method and not args.operation_id and not args.doc_id:
+                endpoints = []
+            else:
+                print(f"[ERROR] Endpoints file not found: {endpoints_file}")
+                print("Run sync first: python scripts/csqaq_api.py sync")
+                return 1
+        else:
+            endpoints = load_endpoints(endpoints_file)
+    elif endpoints_file.exists():
+        # Optional lookup for better diagnostics.
         endpoints = load_endpoints(endpoints_file)
 
     try:
-        path, resolved_method = resolve_endpoint(
+        path, resolved_method, matched_endpoint = resolve_endpoint(
             endpoints=endpoints,
             operation_id=args.operation_id,
             doc_id=args.doc_id,
@@ -226,9 +249,11 @@ def cmd_call(args: argparse.Namespace) -> int:
     has_token_header = any(key.lower() == "apitoken" for key in headers)
     if token and not has_token_header:
         headers["ApiToken"] = token
-    if args.require_token and "ApiToken" not in headers:
+    endpoint_requires_token = bool(matched_endpoint and matched_endpoint.get("requires_api_token"))
+    if (args.require_token or endpoint_requires_token) and "ApiToken" not in headers:
         print(
-            f"[ERROR] API token is required. Set --api-token or export {args.token_env}."
+            "[ERROR] API token is required. "
+            f"Get one from https://csqaq.com/ and set --api-token or export {args.token_env}."
         )
         return 1
 

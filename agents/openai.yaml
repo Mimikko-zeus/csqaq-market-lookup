@@ -1,4 +1,4 @@
 interface:
   display_name: "CSQAQ Market Lookup"
   short_description: "Explore and call all CSQAQ market API endpoints"
-  default_prompt: "Sync CSQAQ docs, list endpoints, and call selected APIs."
+  default_prompt: "Get token from https://csqaq.com/, sync docs, list endpoints, and call selected APIs."

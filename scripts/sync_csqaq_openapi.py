@@ -25,6 +25,7 @@ DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "references"
 API_URL_RE = re.compile(r"^https://docs\.csqaq\.com/api-(\d+)$")
 FENCED_YAML_RE = re.compile(r"```yaml\s*(.*?)\s*```", re.DOTALL)
 HTTP_METHODS = {"get", "post", "put", "patch", "delete", "head", "options", "trace"}
+NON_ASCII_RE = re.compile(r"[^\x00-\x7F]+")
 
 
 def fetch_text(url: str, timeout: float) -> str:
@@ -32,6 +33,22 @@ def fetch_text(url: str, timeout: float) -> str:
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         charset = resp.headers.get_content_charset() or "utf-8"
         return resp.read().decode(charset, errors="replace")
+
+
+def sanitize_ascii(text: str) -> str:
+    cleaned = NON_ASCII_RE.sub(" ", text)
+    cleaned = " ".join(cleaned.split())
+    return cleaned.strip()
+
+
+def sanitize_recursive(value: Any) -> Any:
+    if isinstance(value, str):
+        return sanitize_ascii(value)
+    if isinstance(value, list):
+        return [sanitize_recursive(item) for item in value]
+    if isinstance(value, dict):
+        return {key: sanitize_recursive(item) for key, item in value.items()}
+    return value
 
 
 def parse_api_doc_ids(sitemap_xml: str) -> list[str]:
@@ -55,7 +72,7 @@ def extract_openapi_yaml(markdown_text: str) -> dict[str, Any]:
     data = yaml.safe_load(match.group(1))
     if not isinstance(data, dict):
         raise ValueError("Parsed OpenAPI YAML is not an object.")
-    return data
+    return sanitize_recursive(data)
 
 
 def parse_requires_api_token(operation: dict[str, Any]) -> bool:
@@ -89,6 +106,18 @@ def build_endpoint_items(
                 continue
             if not isinstance(operation, dict):
                 continue
+            raw_summary = str(operation.get("summary", ""))
+            summary = sanitize_ascii(raw_summary)
+            if not summary:
+                summary = f"Endpoint from api-{doc_id}"
+
+            raw_tags = operation.get("tags", [])
+            tags: list[str] = []
+            if isinstance(raw_tags, list):
+                for tag in raw_tags:
+                    tag_str = sanitize_ascii(str(tag))
+                    if tag_str:
+                        tags.append(tag_str)
             item = {
                 "doc_id": doc_id,
                 "doc_url": f"{DOCS_HOST}/api-{doc_id}",
@@ -96,9 +125,9 @@ def build_endpoint_items(
                 "path": path,
                 "method": str(method).upper(),
                 "operationId": operation.get("operationId", ""),
-                "summary": operation.get("summary", ""),
+                "summary": summary,
                 "deprecated": bool(operation.get("deprecated", False)),
-                "tags": operation.get("tags", []) if isinstance(operation.get("tags"), list) else [],
+                "tags": tags,
                 "requires_api_token": parse_requires_api_token(operation),
             }
             items.append(item)
@@ -171,7 +200,7 @@ def merge_openapi_specs(specs: list[tuple[str, dict[str, Any]]]) -> tuple[dict[s
 
 
 def write_json(path: Path, data: Any) -> None:
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    path.write_text(json.dumps(data, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
 
 
 def write_endpoints_markdown(path: Path, endpoints: list[dict[str, Any]]) -> None:
